@@ -1,4 +1,4 @@
-# Site Contador - Mariana e Tiago
+# Site Contador - Namorados
 
 Um site romântico com contador e galeria de fotos no estilo polaroid.
 
