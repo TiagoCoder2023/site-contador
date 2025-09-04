@@ -18,7 +18,7 @@ npm start
 
 ## ✨ Funcionalidades
 
-- **Contador Regressivo**: Conta automaticamente o tempo restante até 09/09/2024
+- **Contador**: Conta automaticamente o tempo
 - **Design Responsivo**: Funciona perfeitamente em desktop, tablet e mobile
 - **Gradiente Verde Água**: Background com gradiente do verde água até preto
 - **Galeria Polaroid**: 20 espaços para fotos no estilo polaroid com efeitos hover
