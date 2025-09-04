@@ -1,6 +1,6 @@
 # Site Contador - Mariana e Tiago
 
-Um site romântico com contador regressivo até 09 de Setembro de 2024 e galeria de fotos no estilo polaroid.
+Um site romântico com contador e galeria de fotos no estilo polaroid.
 
 ## 🚀 Como executar
 
