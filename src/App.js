@@ -95,20 +95,8 @@ function App() {
     });
   };
 
-  // Função específica para touch no iOS
-  const handleTouchStart = (e, index) => {
-    e.preventDefault();
-    e.stopPropagation();
-  };
-
-  const handleTouchEnd = (e, index) => {
-    e.preventDefault();
-    e.stopPropagation();
-    toggleCard(index);
-  };
-
-  // Função para clique normal (desktop)
-  const handleClick = (e, index) => {
+  // Função unificada para clique/toque
+  const handleCardToggle = (e, index) => {
     e.preventDefault();
     e.stopPropagation();
     toggleCard(index);
@@ -154,52 +142,6 @@ function App() {
     };
   }, []);
 
-  // Adicionar eventos de toque específicos para iOS após renderização
-  useEffect(() => {
-    if (isIOS) {
-      const polaroidFrames = document.querySelectorAll('.polaroid-frame');
-      
-      const addTouchEvents = () => {
-        polaroidFrames.forEach((frame, index) => {
-          // Remover eventos existentes para evitar duplicação
-          frame.removeEventListener('touchstart', frame._touchStartHandler);
-          frame.removeEventListener('touchend', frame._touchEndHandler);
-          
-          // Criar handlers específicos para cada frame
-          frame._touchStartHandler = (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            frame.style.transform = 'scale(0.98)';
-          };
-          
-          frame._touchEndHandler = (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            frame.style.transform = '';
-            toggleCard(index);
-          };
-          
-          // Adicionar os eventos
-          frame.addEventListener('touchstart', frame._touchStartHandler, { passive: false });
-          frame.addEventListener('touchend', frame._touchEndHandler, { passive: false });
-        });
-      };
-      
-      // Adicionar eventos após um pequeno delay para garantir que os elementos existam
-      setTimeout(addTouchEvents, 100);
-      
-      return () => {
-        polaroidFrames.forEach((frame) => {
-          if (frame._touchStartHandler) {
-            frame.removeEventListener('touchstart', frame._touchStartHandler);
-          }
-          if (frame._touchEndHandler) {
-            frame.removeEventListener('touchend', frame._touchEndHandler);
-          }
-        });
-      };
-    }
-  }, [isIOS, flippedCards]);
 
   useEffect(() => {
     const startDate = new Date("2024-09-09T00:00:00");
@@ -268,14 +210,12 @@ function App() {
                   className={`polaroid-frame ${
                     flippedCards.has(index) ? "flipped" : ""
                   } ${isIOS ? "ios-device" : ""}`}
-                  onClick={(e) => handleClick(e, index)}
-                  onTouchStart={(e) => handleTouchStart(e, index)}
-                  onTouchEnd={(e) => handleTouchEnd(e, index)}
-                  style={{ 
-                    cursor: 'pointer',
-                    WebkitTouchCallout: 'none',
-                    WebkitUserSelect: 'none',
-                    userSelect: 'none'
+                  onClick={(e) => handleCardToggle(e, index)}
+                  style={{
+                    cursor: "pointer",
+                    WebkitTouchCallout: "none",
+                    WebkitUserSelect: "none",
+                    userSelect: "none",
                   }}
                 >
                   <div className="polaroid-card">
