@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/site-contador/static/css/main.025890ab.css",
-    "main.js": "/site-contador/static/js/main.f69ab911.js",
+    "main.css": "/site-contador/static/css/main.d3c77ac7.css",
+    "main.js": "/site-contador/static/js/main.745eab3b.js",
     "static/media/foto18.jpeg": "/site-contador/static/media/foto18.5f2a563fdd2fa50b1419.jpeg",
     "static/media/foto10.jpeg": "/site-contador/static/media/foto10.8aa02154367d01044e46.jpeg",
     "static/media/foto19.jpeg": "/site-contador/static/media/foto19.f0df0e132fa03dcdbbc7.jpeg",
@@ -23,11 +23,11 @@
     "static/media/foto11.jpeg": "/site-contador/static/media/foto11.7df43f40dcc9aa6b48d1.jpeg",
     "static/media/foto12.jpeg": "/site-contador/static/media/foto12.0a2d0c1bb3409b0f8a86.jpeg",
     "index.html": "/site-contador/index.html",
-    "main.025890ab.css.map": "/site-contador/static/css/main.025890ab.css.map",
-    "main.f69ab911.js.map": "/site-contador/static/js/main.f69ab911.js.map"
+    "main.d3c77ac7.css.map": "/site-contador/static/css/main.d3c77ac7.css.map",
+    "main.745eab3b.js.map": "/site-contador/static/js/main.745eab3b.js.map"
   },
   "entrypoints": [
-    "static/css/main.025890ab.css",
-    "static/js/main.f69ab911.js"
+    "static/css/main.d3c77ac7.css",
+    "static/js/main.745eab3b.js"
   ]
 }
