@@ -1,6 +1,13 @@
 .App {
   min-height: 100vh;
-  background: linear-gradient(135deg, #20B2AA 0%, #008B8B 25%, #006666 50%, #004D4D 75%, #000000 100%);
+  background: linear-gradient(
+    135deg,
+    #20b2aa 0%,
+    #008b8b 25%,
+    #006666 50%,
+    #004d4d 75%,
+    #000000 100%
+  );
   background-attachment: fixed;
   color: white;
   overflow-x: hidden;
@@ -19,13 +26,13 @@
 }
 
 .title {
-  font-family: 'Dancing Script', cursive;
+  font-family: "Dancing Script", cursive;
   font-size: 4rem;
   font-weight: 600;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   letter-spacing: 1px;
   margin: 0;
-  background: linear-gradient(45deg, #ffffff, #E0F6FF);
+  background: linear-gradient(45deg, #ffffff, #e0f6ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -48,7 +55,7 @@
 }
 
 .countdown-title {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 2.5rem;
   margin-bottom: 30px;
   font-weight: 500;
@@ -77,17 +84,17 @@
 }
 
 .time-number {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 3rem;
   font-weight: 700;
-  color: #E0F6FF;
+  color: #e0f6ff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   margin-bottom: 5px;
   letter-spacing: -1px;
 }
 
 .time-label {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 1.1rem;
   font-weight: 500;
   text-transform: uppercase;
@@ -96,7 +103,7 @@
 }
 
 .target-date {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 1.3rem;
   font-weight: 400;
   opacity: 0.9;
@@ -108,7 +115,7 @@
 }
 
 .photos-title {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 2.5rem;
   margin-bottom: 40px;
   font-weight: 500;
@@ -192,7 +199,7 @@
 }
 
 .polaroid-text {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   text-align: center;
   color: #333;
   font-size: 0.9rem;
@@ -237,7 +244,7 @@
 }
 
 .photo-placeholder::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -253,7 +260,7 @@
 }
 
 .placeholder-text {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   color: #999;
   font-size: 0.9rem;
   font-weight: 500;
@@ -277,6 +284,27 @@
   transform: scale(1.02);
 }
 
+/* Correção para iOS em modo landscape */
+.ios-landscape-fix {
+  transform: scaleX(-1);
+}
+
+/* Correção adicional para iOS - detecta orientação específica */
+@media screen and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  .polaroid-image {
+    transform: scaleX(-1);
+  }
+}
+
+/* Para dispositivos iOS específicos em landscape */
+@supports (-webkit-touch-callout: none) {
+  @media screen and (orientation: landscape) {
+    .polaroid-image {
+      transform: scaleX(-1);
+    }
+  }
+}
+
 .polaroid-shadow {
   position: absolute;
   bottom: -5px;
@@ -294,39 +322,39 @@
   .title {
     font-size: 2.5rem;
   }
-  
+
   .countdown-container {
     gap: 15px;
   }
-  
+
   .time-unit {
     min-width: 80px;
     padding: 15px;
   }
-  
+
   .time-number {
     font-size: 2rem;
   }
-  
+
   .polaroid-grid {
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: 25px;
     padding: 15px;
   }
-  
+
   .polaroid-frame {
     width: 160px;
     height: 200px;
     max-width: 160px;
     max-height: 200px;
   }
-  
+
   .photo-placeholder {
     height: 136px;
     max-width: 136px;
     max-height: 136px;
   }
-  
+
   .polaroid-image {
     max-width: 136px;
     max-height: 136px;
@@ -337,47 +365,47 @@
   .container {
     padding: 10px;
   }
-  
+
   .title {
     font-size: 2rem;
   }
-  
+
   .countdown-section {
     padding: 20px;
   }
-  
+
   .countdown-container {
     gap: 10px;
   }
-  
+
   .time-unit {
     min-width: 70px;
     padding: 10px;
   }
-  
+
   .time-number {
     font-size: 1.5rem;
   }
-  
+
   .polaroid-grid {
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 20px;
     padding: 10px;
   }
-  
+
   .polaroid-frame {
     width: 140px;
     height: 180px;
     max-width: 140px;
     max-height: 180px;
   }
-  
+
   .photo-placeholder {
     height: 116px;
     max-width: 116px;
     max-height: 116px;
   }
-  
+
   .polaroid-image {
     max-width: 116px;
     max-height: 116px;
