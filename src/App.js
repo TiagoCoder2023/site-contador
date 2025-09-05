@@ -110,6 +110,16 @@ function App() {
       } else {
         setOrientation("landscape");
       }
+
+      // Forçar re-renderização no iOS após mudança de orientação
+      if (iOS) {
+        setTimeout(() => {
+          const polaroidCards = document.querySelectorAll(".polaroid-card");
+          polaroidCards.forEach((card) => {
+            card.style.transform = card.style.transform || "none";
+          });
+        }, 100);
+      }
     };
 
     // Detectar orientação inicial
@@ -191,7 +201,7 @@ function App() {
                   key={index}
                   className={`polaroid-frame ${
                     flippedCards.has(index) ? "flipped" : ""
-                  }`}
+                  } ${isIOS ? "ios-device" : ""}`}
                   onClick={() => toggleCard(index)}
                 >
                   <div className="polaroid-card">
