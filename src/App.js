@@ -1,6 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
+// Importar todas as imagens
+import foto1 from './images/foto1.jpeg';
+import foto2 from './images/foto2.jpeg';
+import foto3 from './images/foto3.jpeg';
+import foto4 from './images/foto4.jpeg';
+import foto5 from './images/foto5.jpeg';
+import foto6 from './images/foto6.jpeg';
+import foto7 from './images/foto7.jpeg';
+import foto8 from './images/foto8.jpeg';
+import foto9 from './images/foto9.jpeg';
+import foto10 from './images/foto10.jpeg';
+import foto11 from './images/foto11.jpeg';
+import foto12 from './images/foto12.jpeg';
+import foto13 from './images/foto13.jpeg';
+import foto14 from './images/foto14.jpeg';
+import foto15 from './images/foto15.jpeg';
+import foto16 from './images/foto16.jpeg';
+import foto17 from './images/foto17.jpeg';
+import foto18 from './images/foto18.jpeg';
+import foto19 from './images/foto19.jpeg';
+import foto20 from './images/foto20.jpeg';
+
 function App() {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
@@ -37,26 +59,26 @@ function App() {
 
   // Array de fotos - todas as 20 fotos completas
   const polaroidImages = [
-    "/images/foto1.jpeg", // Selfie no carro
-    "/images/foto2.jpeg", // Selfie no espelho
-    "/images/foto3.jpeg", // Selfie divertida com caretas
-    "/images/foto4.jpeg", // Selfie com blusa azul
-    "/images/foto5.jpeg", // Selfie noturna
-    "/images/foto6.jpeg", // Selfie com sorvete
-    "/images/foto7.jpeg", // Selfie com coração
-    "/images/foto8.jpeg", // Selfie na rua
-    "/images/foto9.jpeg", // Selfie com óculos
-    "/images/foto10.jpeg", // Selfie com fundo verde
-    "/images/foto11.jpeg", // Selfie com boné Nike
-    "/images/foto12.jpeg", // Selfie no espelho com gestos
-    "/images/foto13.jpeg", // Selfie com óculos futuristas
-    "/images/foto14.jpeg", // Selfie no restaurante com tablet
-    "/images/foto15.jpeg", // Selfie no restaurante com caretas
-    "/images/foto16.jpeg", // Selfie com tatuagem e colar
-    "/images/foto17.jpeg", // Selfie no espelho com coração
-    "/images/foto18.jpeg", // Selfie com beijinho
-    "/images/foto19.jpeg", // Selfie na cama com bíceps
-    "/images/foto20.jpeg"  // Selfie íntima no espelho
+    foto1,  // Selfie no carro
+    foto2,  // Selfie no espelho
+    foto3,  // Selfie divertida com caretas
+    foto4,  // Selfie com blusa azul
+    foto5,  // Selfie noturna
+    foto6,  // Selfie com sorvete
+    foto7,  // Selfie com coração
+    foto8,  // Selfie na rua
+    foto9,  // Selfie com óculos
+    foto10, // Selfie com fundo verde
+    foto11, // Selfie com boné Nike
+    foto12, // Selfie no espelho com gestos
+    foto13, // Selfie com óculos futuristas
+    foto14, // Selfie no restaurante com tablet
+    foto15, // Selfie no restaurante com caretas
+    foto16, // Selfie com tatuagem e colar
+    foto17, // Selfie no espelho com coração
+    foto18, // Selfie com beijinho
+    foto19, // Selfie na cama com bíceps
+    foto20  // Selfie íntima no espelho
   ];
 
   const toggleCard = (index) => {
