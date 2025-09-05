@@ -102,6 +102,9 @@ function App() {
     toggleCard(index);
   };
 
+  // Função para verificar se deve usar animação 3D ou display
+  const shouldUse3D = !isIOS;
+
   // Detectar iOS e orientação
   useEffect(() => {
     // Detectar se é iOS
@@ -141,7 +144,6 @@ function App() {
       window.removeEventListener("resize", handleOrientationChange);
     };
   }, []);
-
 
   useEffect(() => {
     const startDate = new Date("2024-09-09T00:00:00");
@@ -209,7 +211,7 @@ function App() {
                   key={index}
                   className={`polaroid-frame ${
                     flippedCards.has(index) ? "flipped" : ""
-                  } ${isIOS ? "ios-device" : ""}`}
+                  } ${isIOS ? "ios-device" : ""} ${shouldUse3D ? "use-3d" : "use-display"}`}
                   onClick={(e) => handleCardToggle(e, index)}
                   style={{
                     cursor: "pointer",

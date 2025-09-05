@@ -172,15 +172,6 @@
   position: relative;
   width: 100%;
   height: 100%;
-  transform-style: preserve-3d;
-  -webkit-transform-style: preserve-3d;
-  transition: transform 0.6s ease;
-  -webkit-transition: transform 0.6s ease;
-}
-
-.polaroid-frame.flipped .polaroid-card {
-  transform: rotateY(180deg);
-  -webkit-transform: rotateY(180deg);
 }
 
 .polaroid-front,
@@ -188,14 +179,10 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
   border-radius: 2px;
 }
 
 .polaroid-back {
-  transform: rotateY(180deg);
-  -webkit-transform: rotateY(180deg);
   background: white;
   padding: 12px 12px 40px 12px;
   display: flex;
@@ -342,22 +329,59 @@
   }
 }
 
-/* Correção específica para dispositivos iOS - versão simplificada */
-.ios-device .polaroid-card {
-  -webkit-transform-style: preserve-3d;
+/* Abordagem 3D para desktop */
+.use-3d .polaroid-card {
   transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+  -webkit-transition: transform 0.6s ease;
 }
 
-.ios-device .polaroid-back {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-transform: rotateY(180deg);
+.use-3d.flipped .polaroid-card {
   transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
 }
 
-.ios-device .polaroid-front {
-  -webkit-backface-visibility: hidden;
+.use-3d .polaroid-front,
+.use-3d .polaroid-back {
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.use-3d .polaroid-back {
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+}
+
+/* Abordagem display para iOS */
+.use-display .polaroid-card {
+  position: relative;
+  transition: none;
+}
+
+.use-display .polaroid-front {
+  display: block;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.use-display .polaroid-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  transform: none;
+  -webkit-transform: none;
+}
+
+.use-display.flipped .polaroid-front {
+  opacity: 0;
+}
+
+.use-display.flipped .polaroid-back {
+  opacity: 1;
 }
 
 /* Melhorias para interação touch no iOS */
