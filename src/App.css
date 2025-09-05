@@ -374,6 +374,42 @@
   z-index: 1;
 }
 
+/* Melhorias para interação touch no iOS */
+.ios-device {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+.ios-device .polaroid-frame {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
+  cursor: pointer;
+}
+
+.ios-device .polaroid-frame:active {
+  transform: scale(0.98);
+  -webkit-transform: scale(0.98);
+}
+
+/* Garantir que o toque funcione em todos os elementos da polaroid */
+.ios-device .polaroid-card,
+.ios-device .polaroid-front,
+.ios-device .polaroid-back,
+.ios-device .polaroid-photo,
+.ios-device .polaroid-text {
+  pointer-events: none;
+}
+
+.ios-device .polaroid-frame {
+  pointer-events: auto;
+}
+
 .polaroid-shadow {
   position: absolute;
   bottom: -5px;
